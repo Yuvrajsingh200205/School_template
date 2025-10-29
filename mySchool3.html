@@ -1,0 +1,4010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schotest Public School Gurgaon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #1a3c5a;
+            --secondary-color: #f9bc35;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .header-container {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-transparent {
+            background-color: transparent;
+        }
+
+        .header-scrolled {
+            background-color: rgba(26, 60, 90, 0.95);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 80px;
+            transition: var(--transition);
+        }
+
+        .header-scrolled .logo-img {
+            height: 70px;
+        }
+
+        .school-name {
+            margin-left: 10px;
+            color: var(--text-light);
+        }
+
+        .school-name h1 {
+            font-size: 31px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .school-name p {
+            font-size: 20px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+            margin: 0 5px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-light);
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .dropdown-menu {
+            background-color: rgba(26, 60, 90, 0.95);
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            color: var(--text-light);
+            font-size: 14px;
+            padding: 8px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(249, 188, 53, 0.1);
+            color: var(--secondary-color);
+        }
+
+        .search-icon {
+            color: var(--text-light);
+            font-size: 18px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-icon:hover {
+            color: var(--secondary-color);
+        }
+
+        .enquire-now-btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .enquire-now-btn:hover {
+            background-color: #e6ad29;
+            transform: translateY(-2px);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(26, 60, 90, 0.95);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            list-style: none;
+            padding: 10px 0;
+        }
+
+        .sub-menu li {
+            padding: 0;
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 8px 20px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .sub-menu li a:hover {
+            background-color: rgba(249, 188, 53, 0.1);
+            color: var(--secondary-color);
+        }
+
+        .drop-menu:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .sub-menu1 {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: rgba(26, 60, 90, 0.95);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: var(--transition);
+            z-index: 1002;
+            list-style: none;
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .drop-menu1:hover .sub-menu1 {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--text-light);
+            z-index: 2;
+            width: 80%;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: var(--transition);
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: #e6ad29;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                background-color: rgba(26, 60, 90, 0.95);
+                padding: 20px;
+            }
+
+            .dropdown-menu,
+            .sub-menu,
+            .sub-menu1 {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background-color: transparent;
+                padding-left: 20px;
+            }
+
+            .logo-img {
+                height: 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
+
+        /* Enquiry Form Styles */
+        .apply_form_main {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 100%;
+            max-width: 450px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 2000;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+            overflow-y: auto;
+        }
+
+        .apply_form_main.active {
+            right: 0;
+        }
+
+        .form-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .form-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .apply_form {
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .close_apply_form {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close_apply_form:before,
+        .close_apply_form:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .close_apply_form:before {
+            transform: rotate(45deg);
+        }
+
+        .close_apply_form:after {
+            transform: rotate(-45deg);
+        }
+
+        .close_apply_form:hover:before,
+        .close_apply_form:hover:after {
+            background-color: var(--secondary-color);
+        }
+
+        .apply_form h5 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .apply_form h5:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .apply_form blockquote {
+            font-size: 16px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        #digistorm-form {
+            margin-top: 20px;
+        }
+
+        /* Form animation elements */
+        .form-element {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.5s ease;
+        }
+
+        .apply_form_main.active .form-element:nth-child(1) {
+            animation: slideIn 0.5s ease forwards 0.1s;
+        }
+
+        .apply_form_main.active .form-element:nth-child(2) {
+            animation: slideIn 0.5s ease forwards 0.2s;
+        }
+
+        .apply_form_main.active .form-element:nth-child(3) {
+            animation: slideIn 0.5s ease forwards 0.3s;
+        }
+
+        .apply_form_main.active .form-element:nth-child(4) {
+            animation: slideIn 0.5s ease forwards 0.4s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Placeholder form styling */
+        .form-control {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(249, 188, 53, 0.25);
+        }
+
+        .form-label {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 992px) {
+            .navbar-nav {
+                background-color: rgba(26, 60, 90, 0.95);
+                padding: 20px;
+            }
+
+            .dropdown-menu,
+            .sub-menu,
+            .sub-menu1 {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background-color: transparent;
+                padding-left: 20px;
+            }
+
+            .logo-img {
+                height: 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .apply_form_main {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-container header-transparent">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container" style="max-width: 1582px;">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="https://schotest.com/assets/uploads/school_logo/5fcef36b50648.png"
+                            alt="Pathways School Logo" class="logo-img">
+                    </a>
+                    <div class="school-name">
+                        <h1>Schotest</h1>
+                        <p>Public School</p>
+                    </div>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item drop-menu">
+                            <a href="javascript:;" class="nav-link">ABOUT US</a>
+                            <ul class="sub-menu">
+                                <li><a href="/the-school">Introduction</a></li>
+                                <li class="drop-menu1">
+                                    <a href="javascript:void(0);">Leadership & Governance</a>
+                                    <ul class="sub-menu1">
+                                        <li><a href="/director">School Director</a></li>
+                                        <li><a href="/leadership-team">Leadership Team</a></li>
+                                        <li><a href="/founders">Founders</a></li>
+                                        <li><a href="/governors">Board of Governors</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/faculty">Faculty</a></li>
+
+                                <li><a href="/affiliations-accredidations">Affiliations & Accreditations</a></li>
+                                <li><a href="/awards-honours">Awards & Honors</a></li>
+                                <li><a href="/testimonials">Testimonials</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item drop-menu">
+                            <a href="javascript:;" class="nav-link">ACADEMICS</a>
+                            <ul class="sub-menu">
+                                <li><a href="/pedagogy">Pedagogy</a></li>
+                                <li class="drop-menu1">
+                                    <a href="javascript:;" class="dropdown__button">Curriculum</a>
+                                    <ul class="sub-menu1">
+                                        <li><a href="/ib-school">Overview</a></li>
+                                        <li><a href="/ib-school/pyp">PYP</a></li>
+                                        <li><a href="/ib-school/myp">MYP</a></li>
+                                        <li><a href="/ib-school/dp">DP</a></li>
+                                        <li><a href="/ib-school/cp">CP</a></li>
+                                        <li><a href="/ib-school/pathways-diploma">Pathways Diploma</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/sports">Sports</a></li>
+                                <li><a href="/visual-arts">Visual Arts</a></li>
+                                <li><a href="/performing-arts">Performing Arts</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item drop-menu">
+                            <a href="javascript:;" class="nav-link">STUDENT LIFE</a>
+                            <ul class="sub-menu">
+                                <li><a href="/annual-camps">Annual Camps</a></li>
+                                <li><a href="/service-learning">Service Learning</a></li>
+                                <li><a href="/student-council">Student Council</a></li>
+                                <li><a href="/international-expeditions">International Expeditions</a></li>
+                                <li><a href="/calendar">Calendar</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item drop-menu">
+                            <a href="javascript:;" class="nav-link">COMMUNITY</a>
+                            <ul class="sub-menu">
+                                <li><a href="/alumni">Alumni</a></li>
+                                <li><a href="/parent-partnership">Parent Partnership</a></li>
+                                <li><a href="/prodigies">Pathways Prodigies</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item drop-menu">
+                            <a href="javascript:;" class="nav-link">NEWS & EVENTS</a>
+                            <ul class="sub-menu">
+                                <li><a href="/newsfeed">Newsfeed</a></li>
+                                <li><a href="/festival-of-hope">Festival of Hope</a></li>
+                                <li><a href="/magazine">Magazine</a></li>
+                                <li><a href="/media-coverage">Media Coverage</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item drop-menu">
+                            <a href="javascript:;" class="nav-link">ADMISSIONS</a>
+                            <ul class="sub-menu">
+                                <li><a href="/admissions">Procedure</a></li>
+                                <li><a href="/fee-structure">Fee Structure</a></li>
+                                <li><a href="/transport-facility">Transport Facility</a></li>
+                                <li><a href="/scholarships">Scholarships</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link search-icon">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link enquire-now-btn" id="enquireNowBtn">Enquire Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="video-container">
+        <video autoplay muted loop class="video-bg">
+            <source src="https://videos.pexels.com/video-files/5198159/5198159-uhd_3840_2160_25fps.mp4"
+                type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Schotest Public School Gurgaon</h1>
+            <p>Empowering young minds to become global citizens through holistic education and inspiring them to excel
+                in all aspects of life.</p>
+            <a href="/admissions" class="hero-btn">Apply Now</a>
+        </div>
+    </div>
+    <!-- Enquiry Form -->
+    <div class="form-overlay" id="formOverlay"></div>
+    <div class="apply_form_main" id="applyFormMain">
+        <div class="apply_form">
+            <div class="close_apply_form" id="closeApplyForm"></div>
+            <div class="form-element">
+                <h5>Get In Touch</h5>
+            </div>
+            <div class="form-element">
+                <blockquote>Drop us your details for a quick response.</blockquote>
+            </div>
+            <div class="form-element">
+                <!-- Always show the placeholder form -->
+                <form id="enquiryForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="How can we help you?"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+
+            <!-- Remove the Digistorm form wrapper since we're not using it -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Change header background on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header-container');
+            if (window.scrollY > 50) {
+                header.classList.remove('header-transparent');
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.add('header-transparent');
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.navbar-toggler').addEventListener('click', function () {
+            if (window.scrollY <= 50) {
+                document.querySelector('.header-container').classList.toggle('header-scrolled');
+            }
+        });
+
+        // Get all elements with the enquire-now-btn class
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set up event listener for Enquire Now button
+            const enquireNowBtn = document.getElementById('enquireNowBtn');
+            const applyFormMain = document.getElementById('applyFormMain');
+            const closeApplyForm = document.getElementById('closeApplyForm');
+            const formOverlay = document.getElementById('formOverlay');
+            const body = document.body;
+            const enquiryForm = document.getElementById('enquiryForm');
+
+            // Open form when clicking Enquire Now button
+            if (enquireNowBtn) {
+                enquireNowBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    applyFormMain.classList.add('active');
+                    formOverlay.classList.add('active');
+                    body.style.overflow = 'hidden';
+                });
+            }
+
+            // Close form when clicking X button
+            if (closeApplyForm) {
+                closeApplyForm.addEventListener('click', function () {
+                    applyFormMain.classList.remove('active');
+                    formOverlay.classList.remove('active');
+                    body.style.overflow = 'auto';
+                });
+            }
+
+            // Close form when clicking overlay
+            if (formOverlay) {
+                formOverlay.addEventListener('click', function () {
+                    applyFormMain.classList.remove('active');
+                    formOverlay.classList.remove('active');
+                    body.style.overflow = 'auto';
+                });
+            }
+
+            // Form submission handler
+            if (enquiryForm) {
+                enquiryForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const message = document.getElementById('message').value;
+
+                    // Here you would typically send the data to a server
+                    // For demonstration, we'll just show an alert
+                    alert(`Thank you for your enquiry, ${name}! We will contact you soon at ${email} or ${phone}.`);
+
+                    // Close the form
+                    applyFormMain.classList.remove('active');
+                    formOverlay.classList.remove('active');
+                    body.style.overflow = 'auto';
+
+                    // Reset the form
+                    enquiryForm.reset();
+                });
+            }
+        });
+    </script>
+
+    <!-- personal information  -->
+    <!-- !!!!! -->
+
+    <style>
+        .principal-section {
+            position: relative;
+            background-color: #3c3e44;
+            color: white;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .principal-container {
+            display: flex;
+            max-width: 1410px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .principal-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeInLeft 1s ease forwards;
+        }
+
+        .principal-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .principal-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .message-box {
+            background-color: #2b2d5c;
+            padding: 30px;
+            border-radius: 8px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .message-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .principal-name {
+            font-size: 18px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding-left: 15px;
+        }
+
+        .message-text {
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .read-more {
+            display: block;
+            margin-bottom: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .team-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #b9bd36;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.6s;
+            transition: background-color 0.3s ease;
+        }
+
+        .bg-white {
+            background-color: #E3E3E3 !important;
+        }
+
+        .team-button:hover {
+            background-color: #c8cc3d;
+        }
+
+        .team-button svg {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .principal-container {
+                flex-direction: column;
+            }
+
+            .principal-image,
+            .principal-content {
+                flex: auto;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <section class="principal-section" style="background-color: #1A3956;">
+        <div class="principal-container   mt-4" style="background-color: #E3E3E3;"  >
+            <div class="principal-image">
+                <img class="w-75" src="https://schotest.com/assets/uploads/schools/5f87d8b0ae560.png" class="img-fluid"
+                    alt="Principal" />
+            </div>
+            <div class="principal-content">
+                <div class="message-box">
+                    <h2 class="message-title">Principal's Message</h2>
+                    <p class="principal-name">Mr. Lalit Kumar </p>
+                    <!-- <p class="quote">"By education, I mean an all-round drawing of the best in a child in body, mind, and spirit." – Mahatma Gandhi</p> -->
+                    <p class="message-text">"It is easier to build strong children than to repair broken men". A wise
+                        quote referring to the role that children could play in laying the foundation of a strong
+                        nation. I believe that the foundation of a strong nation depends on the way its children are
+                        cared for and nurtured. In order to build a strong nation, we must instill good values in our
+                        children providing them love and care, guiding them through thick and thin till they become
+                        confident and strong enough. This all can be done through “Quality education”.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <a href="#" class="team-button  mt-3">
+                    Meet The Team
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 4.5L21 12L13.5 19.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M21 12H3" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- !!!!! -->
+    <!-- school feature  -->
+    <!-- @@@@@ -->
+
+    <style>
+        /* Scoped styles for school features section only */
+        .school-features-section {
+            max-width: 1410px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background-color: #1A3956;
+        }
+
+        .school-features-section * {
+            box-sizing: border-box;
+        }
+
+        .school-features-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .school-features-header h2 {
+            font-size: 36px;
+            color: #ebecef;
+            margin-bottom: 16px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .school-features-header p {
+            font-size: 18px;
+            color: #c5c6c7;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .school-features-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
+
+        @media (min-width: 640px) {
+            .school-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .school-features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .school-feature-card {
+            position: relative;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .school-feature-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .school-feature-card:hover .school-feature-image {
+            transform: scale(1.1);
+        }
+
+        .school-feature-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), transparent);
+            padding: 24px;
+            transform: translateY(70%);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .school-feature-card:hover .school-feature-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .school-feature-title {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .school-feature-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            transform: translateY(20px);
+            transition: transform 0.5s ease 0.1s;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+        }
+
+        .school-feature-card:hover .school-feature-title,
+        .school-feature-card:hover .school-feature-description {
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- School Features Section -->
+    <div style="background-color: #E3E3E3">
+        <section class="school-features-section">
+            <div class="school-features-header">
+                <h2>School Features</h2>
+                <p>Discover what makes our school unique and exceptional</p>
+            </div>
+
+            <div class="school-features-grid">
+                <!-- Feature 1 -->
+                <div class="school-feature-card">
+                    <img src="images/schoolBus.avif" alt="Modern Facilities" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Modern Facilities</h3>
+                        <p class="school-feature-description">
+                            State-of-the-art classrooms, laboratories, sports complexes, and digital learning spaces
+                            designed for the 21st century education.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="school-feature-card">
+                    <img src="images/library.jpg" alt="Extracurricular Activities" class="school-feature-image"> Library
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Extracurricular Activities</h3>
+                        <p class="school-feature-description">
+                            A wide range of clubs, sports teams, and artistic programs to develop well-rounded students
+                            with diverse interests and talents.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="school-feature-card">
+                    <img src="images/schoolLab.webp" alt="Global Exchange Program" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Global Exchange Program</h3>
+                        <p class="school-feature-description">
+                            International partnerships that enable cultural exchange and global learning experiences for
+                            our students.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="school-feature-card">
+                    <img src="images/hostel.jpg" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="school-feature-card">
+                    <img src="images/sport.webp" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="school-feature-card">
+                    <img src="images/canteen.avif" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 7 -->
+                <div class="school-feature-card">
+                    <img src="images/music.jpg" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 8 -->
+                <div class="school-feature-card">
+                    <img src="images/infrastructure.webp" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 9 -->
+                <div class="school-feature-card">
+                    <img src="images/medical.jpg" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 10 -->
+                <div class="school-feature-card">
+                    <img src="images/security.webp" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 11 -->
+                <div class="school-feature-card">
+                    <img src="images/art.jpg" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 12 -->
+                <div class="school-feature-card">
+                    <img src="images/computer.avif" alt="Technology Integration" class="school-feature-image">
+                    <div class="school-feature-overlay">
+                        <h3 class="school-feature-title">Technology Integration</h3>
+                        <p class="school-feature-description">
+                            Cutting-edge technology integrated into everyday learning, preparing students for the
+                            digital future.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- @@@@@ -->
+
+    <!-- notification and event  -->
+    <!-- ##### -->
+ 
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css" rel="stylesheet">
+      <style>
+        /* Import fonts with more specific selectors */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    
+        /* Create a scoped wrapper to avoid conflicts */
+        .lis-events-news-section {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            max-width: 1410px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #E3E3E3;
+        }
+    
+        .lis-events-news-section * {
+            box-sizing: border-box;
+        }
+    
+        .lis-events-news-section .lis-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+    
+        .lis-events-news-section .lis-events-column {
+            flex: 2;
+            min-width: 320px;
+        }
+    
+        .lis-events-news-section .lis-news-column {
+            flex: 1;
+            min-width: 404px;
+        }
+    
+        .lis-events-news-section .lis-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    
+        .lis-events-news-section .lis-section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a2c5b;
+            letter-spacing: 1px;
+            position: relative;
+            margin: 0;
+        }
+    
+        .lis-events-news-section .lis-section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a2c5b, #3b5998);
+            border-radius: 2px;
+        }
+    
+        .lis-events-news-section .lis-section-header a {
+            font-size: 16px;
+            font-weight: 500;
+            color: #997a42;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 30px;
+        }
+    
+        .lis-events-news-section .lis-section-header a:hover {
+            border-color: #997a42;
+            background-color: rgba(153, 122, 66, 0.05);
+        }
+    
+        .lis-events-news-section .lis-hover-underline {
+            position: relative;
+            display: inline-block;
+        }
+    
+        .lis-events-news-section .lis-hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #997a42;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+    
+        .lis-events-news-section .lis-hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    
+        /* Swiper styles for events */
+        .lis-events-news-section .lis-events-slider {
+            width: 100%;
+            position: relative;
+            padding: 10px 0 60px;
+            height: 520px;
+        }
+    
+        .lis-events-news-section .swiper {
+            width: 100%;
+            height: 100%;
+        }
+    
+        /* FIX: Updated slide styling to remove excessive space */
+        .lis-events-news-section .swiper-slide {
+            height: auto;
+            display: flex;
+            align-items: stretch;
+            width: 412px !important; /* Keep width consistent */
+        }
+    
+        /* FIX: Reduced gap between slides */
+        .lis-events-news-section .swiper-wrapper {
+            align-items: stretch;
+        }
+    
+        .lis-events-news-section .swiper-pagination {
+            bottom: 10px;
+        }
+    
+        .lis-events-news-section .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: #ccc;
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+    
+        .lis-events-news-section .swiper-pagination-bullet-active {
+            background: #1a2c5b;
+            transform: scale(1.2);
+        }
+    
+        /* FIX: Remove this rule as it was causing issues */
+        /*.swiper-slide.swiper-slide-next {
+            width: 311px !important;
+            margin-right: 10px !important;
+        }*/
+    
+        .lis-events-news-section .swiper-button-next,
+        .lis-events-news-section .swiper-button-prev {
+            color: #1a2c5b;
+            background: rgba(255, 255, 255, 0.9);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+    
+        .lis-events-news-section .swiper-button-next:hover,
+        .lis-events-news-section .swiper-button-prev:hover {
+            background: #1a2c5b;
+            color: white;
+            transform: scale(1.05);
+        }
+    
+        .lis-events-news-section .swiper-button-next:after,
+        .lis-events-news-section .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    
+        .lis-events-news-section .lis-event-card {
+            background-color: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Ensure card takes full width of slide */
+        }
+    
+        .lis-events-news-section .lis-event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+    
+        .lis-events-news-section .lis-event-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+    
+        .lis-events-news-section .lis-event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+    
+        .lis-events-news-section .lis-event-card:hover .lis-event-image img {
+            transform: scale(1.1);
+        }
+    
+        .lis-events-news-section .lis-event-date-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #1a2c5b, #3b5998);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(26, 44, 91, 0.35);
+            letter-spacing: 0.5px;
+        }
+    
+        .lis-events-news-section .lis-event-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .lis-events-news-section .lis-event-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a2c5b;
+            display: block;
+            line-height: 1.4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    
+        .lis-events-news-section .lis-event-title:hover {
+            color: #3b5998;
+        }
+    
+        .lis-events-news-section .lis-event-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+    
+        .lis-events-news-section .lis-event-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: transparent;
+            color: #1a2c5b;
+            border: 1.5px solid #1a2c5b;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            margin-top: auto;
+        }
+    
+        .lis-events-news-section .lis-event-btn:hover {
+            background-color: #1a2c5b;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 44, 91, 0.2);
+        }
+    
+        .lis-events-news-section .lis-event-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+    
+        .lis-events-news-section .lis-event-btn:hover i {
+            transform: translateX(5px);
+        }
+    
+        /* News section with auto-scroll */
+        .lis-events-news-section .lis-news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-height: 520px;
+            overflow-y: hidden;
+            padding-right: 15px;
+            position: relative;
+        }
+    
+        .lis-events-news-section .lis-news-list-container {
+            transition: transform 0.8s ease;
+        }
+    
+        .lis-events-news-section .lis-news-item {
+            display: flex;
+            background-color: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(30px);
+            text-decoration: none;
+            height: 110px;
+        }
+    
+        .lis-events-news-section .lis-news-item:hover {
+            transform: translateY(-5px) translateX(0);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+    
+        .lis-events-news-section .lis-news-date {
+            background: linear-gradient(135deg, #1a2c5b, #3b5998);
+            color: white;
+            min-width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 10px;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .lis-events-news-section .lis-news-date::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+    
+        .lis-events-news-section .lis-news-date .lis-date {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1;
+        }
+    
+        .lis-events-news-section .lis-news-date .lis-month {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+    
+        .lis-events-news-section .lis-news-content {
+            padding: 20px 25px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+    
+        .lis-events-news-section .lis-news-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+    
+        .lis-events-news-section .lis-news-item:hover .lis-news-title {
+            color: #1a2c5b;
+        }
+    
+        /* News navigation controls */
+        .lis-events-news-section .lis-news-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+    
+        .lis-events-news-section .lis-news-controls button {
+            background: #fff;
+            border: none;
+            color: #1a2c5b;
+            cursor: pointer;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .lis-events-news-section .lis-news-controls button:hover {
+            background: #1a2c5b;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 44, 91, 0.2);
+        }
+    
+        @media (max-width: 992px) {
+            .lis-events-news-section .lis-layout {
+                flex-direction: column;
+            }
+    
+            .lis-events-news-section .lis-section-header h2 {
+                font-size: 36px;
+            }
+    
+            .lis-events-news-section .lis-events-slider,
+            .lis-events-news-section .lis-news-list {
+                height: auto;
+                max-height: none;
+            }
+    
+            .lis-events-news-section .lis-news-list {
+                max-height: 450px;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .lis-events-news-section .lis-section-header h2 {
+                font-size: 32px;
+            }
+    
+            .lis-events-news-section .swiper-button-next,
+            .lis-events-news-section .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+    
+            .lis-events-news-section .swiper-button-next:after,
+            .lis-events-news-section .swiper-button-prev:after {
+                font-size: 16px;
+            }
+    
+            .lis-events-news-section .lis-event-image {
+                height: 220px;
+            }
+        }
+    
+        .vl {
+            border-left: 6px solid #1A3956;
+            height: 600px;
+        }
+      </style>
+ 
+      <div style="background-color: #1A3956">
+        <div class="lis-events-news-section">
+          <div class="lis-layout">
+            <!-- EVENTS SECTION -->
+            <div class="lis-events-column" style="gap: 2;">
+              <div class="lis-section-header lis-events-header">
+                <h2> NOTIFICATIONS </h2>
+                <a href="" class="lis-hover-underline" style="position: relative;right: 100px;">ALL NEWS</a>
+              </div>
+    
+              <div class="lis-events-slider">
+                <div class="swiper eventsSwiper">
+                  <div class="swiper-wrapper">
+                    <!-- Event Card 1 -->
+                    <div class="swiper-slide">
+                      <div class="lis-event-card">
+                        <span class="lis-event-date-badge">5th Mar 2025</span>
+                        <div class="lis-event-image">
+                          <img src="images/mhrd.jpg" alt="Korean Festival">
+                        </div>
+                        <div class="lis-event-content">
+                          <a href="" class="lis-event-title">Board Exams To Be Made Easy With 2 Attempts In A Year</a>
+                          <p class="lis-event-description"> HRD ministry has said that NCERT will be developing guidelines for transforming school assessment to</p>
+                          <a href="" class="lis-event-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <!-- Event Card 2 -->
+                    <div class="swiper-slide">
+                      <div class="lis-event-card">
+                        <span class="lis-event-date-badge">Aug 12, 2020 </span>
+                        <div class="lis-event-image">
+                          <img src="images/govt.avif" alt="Literary Fest">
+                        </div>
+                        <div class="lis-event-content">
+                          <a href="" class="lis-event-title">Delhi Government Launches EY STEM Tribe App To Uplift Girls In STEM Careers</a>
+                          <p class="lis-event-description"> To boost the girls' involvement in the STEM (Science, Technology, Engineering and Mathematics) ca...</p>
+                          <a href="" class="lis-event-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <!-- Event Card 3 -->
+                    <div class="swiper-slide">
+                      <div class="lis-event-card">
+                        <span class="lis-event-date-badge">Sep 19, 2022</span>
+                        <div class="lis-event-image">
+                          <img src="images/education.jpg" alt="Funky Hair Day">
+                        </div>
+                        <div class="lis-event-content">
+                          <a href="" class="lis-event-title">Education</a>
+                          <p class="lis-event-description">It helps people become better citizens, get a better-paid job, shows the difference between good and...</p>
+                          <a href="" class="lis-event-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Event Card 4 -->
+                    <div class="swiper-slide">
+                      <div class="lis-event-card">
+                        <span class="lis-event-date-badge">Sep 19, 2022</span>
+                        <div class="lis-event-image">
+                          <img src="images/education.jpg" alt="Funky Hair Day">
+                        </div>
+                        <div class="lis-event-content">
+                          <a href="" class="lis-event-title">Education</a>
+                          <p class="lis-event-description">It helps people become better citizens, get a better-paid job, shows the difference between good and...</p>
+                          <a href="" class="lis-event-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Event Card 5 -->
+                    <div class="swiper-slide">
+                      <div class="lis-event-card">
+                        <span class="lis-event-date-badge">Sep 19, 2022</span>
+                        <div class="lis-event-image">
+                          <img src="images/education.jpg" alt="Funky Hair Day">
+                        </div>
+                        <div class="lis-event-content">
+                          <a href="" class="lis-event-title">Education</a>
+                          <p class="lis-event-description">It helps people become better citizens, get a better-paid job, shows the difference between good and...</p>
+                          <a href="" class="lis-event-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Event Card 6 -->
+                    <div class="swiper-slide">
+                      <div class="lis-event-card">
+                        <span class="lis-event-date-badge">Sep 19, 2022</span>
+                        <div class="lis-event-image">
+                          <img src="images/education.jpg" alt="Funky Hair Day">
+                        </div>
+                        <div class="lis-event-content">
+                          <a href="" class="lis-event-title">Education</a>
+                          <p class="lis-event-description">It helps people become better citizens, get a better-paid job, shows the difference between good and...</p>
+                          <a href="" class="lis-event-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+              </div>
+            </div>
+            <div class="vl"></div>
+            <!-- NEWS SECTION -->
+            <div class="lis-news-column">
+              <div class="lis-section-header lis-news-header">
+                <h2>EVENTS</h2>
+                <a href="" class="lis-hover-underline">ALL EVENTS</a>
+              </div>
+    
+              <div class="lis-news-list" id="newsContainer">
+                <div class="lis-news-list-container" id="newsListContainer">
+                  <!-- News Item 1 -->
+                  <a href="" class="lis-news-item  m-md-1">
+                    <div class="lis-news-date">
+                      <span class="lis-date">5</span>
+                      <span class="lis-month">Mar</span>
+                    </div>
+                    <div class="lis-news-content">
+                      <h3 class="lis-news-title">LIS hosts prestigious guests at the Annual Korean Festival</h3>
+                    </div>
+                  </a>
+    
+                  <!-- News Item 2 -->
+                  <a href="" class="lis-news-item m-md-1">
+                    <div class="lis-news-date">
+                      <span class="lis-date">5</span>
+                      <span class="lis-month">Mar</span>
+                    </div>
+                    <div class="lis-news-content">
+                      <h3 class="lis-news-title">Lancers International School Hosts Korean Festival To Celebrate Cultural Diversity</h3>
+                    </div>
+                  </a>
+    
+                  <!-- News Item 3 -->
+                  <a href="" class="lis-news-item m-md-1">
+                    <div class="lis-news-date">
+                      <span class="lis-date">22</span>
+                      <span class="lis-month">Feb</span>
+                    </div>
+                    <div class="lis-news-content">
+                      <h3 class="lis-news-title">Lancers International School to Dazzle at Asian Unity Golf Cup 2025 with Cultural Performances today</h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
+    
+              <div class="lis-news-controls">
+                <button id="newsUp"><i class="fas fa-chevron-up"></i></button>
+                <button id="newsDown"><i class="fas fa-chevron-down"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Initialize GSAP and ScrollTrigger
+          gsap.registerPlugin(ScrollTrigger);
+    
+          // Animate section headers
+          gsap.to(".lis-events-news-section .lis-section-header", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.2
+          });
+    
+          // Initialize Events Swiper with modified settings
+          const eventsSwiper = new Swiper(".eventsSwiper", {
+    slidesPerView: 'auto', // Changed to 'auto' for better control
+    spaceBetween: 20,
+    loop: false, // Changed to false to prevent duplication issues
+    centeredSlides: false,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+    },
+    effect: "slide",
+    speed: 1000,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 15
+        },
+        1024: {
+            slidesPerView: 1.5, // Shows 1 full card and part of the next
+            spaceBetween: 20
+        },
+        1200: {
+            slidesPerView: 1.8, // Shows more of the next card on larger screens
+            spaceBetween: 20
+        }
+    }
+});
+    
+          // Animate event cards when they come into view
+          gsap.to(".lis-events-news-section .lis-event-card", {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: ".lis-events-news-section .lis-events-slider",
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          });
+    
+          // Animate news items
+          gsap.to(".lis-events-news-section .lis-news-item", {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            stagger: 0.15,
+            scrollTrigger: {
+              trigger: ".lis-events-news-section .lis-news-list",
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          });
+    
+          // News section scrolling functionality
+          const newsContainer = document.getElementById('newsContainer');
+          const newsListContainer = document.getElementById('newsListContainer');
+          const newsUpBtn = document.getElementById('newsUp');
+          const newsDownBtn = document.getElementById('newsDown');
+    
+          // Variables for auto-scrolling
+          let newsScrollPosition = 0;
+          const newsItemHeight = 135; // Height of a news item + gap
+          const totalNewsItems = document.querySelectorAll('.lis-news-item').length;
+    
+          // Function to scroll news up
+          function scrollNewsUp() {
+            if (newsScrollPosition > 0) {
+              newsScrollPosition--;
+              updateNewsPosition();
+            }
+          }
+    
+          // Function to scroll news down
+          function scrollNewsDown() {
+            if (newsScrollPosition < totalNewsItems - 1) {
+              newsScrollPosition++;
+              updateNewsPosition();
+            }
+          }
+    
+          // Update news container position
+          function updateNewsPosition() {
+            gsap.to(newsListContainer, {
+              y: -newsScrollPosition * newsItemHeight,
+              duration: 0.5,
+              ease: "power2.out"
+            });
+          }
+    
+          // Event listeners for news navigation buttons
+          newsUpBtn.addEventListener('click', scrollNewsUp);
+          newsDownBtn.addEventListener('click', scrollNewsDown);
+    
+          // Enhance hover effects for better interactivity
+          document.querySelectorAll('.lis-events-news-section .lis-event-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+              gsap.to(this.querySelector('.lis-event-content'), {
+                y: -8,
+                duration: 0.3,
+                ease: "power2.out"
+              });
+    
+              gsap.to(this.querySelector('.lis-event-image img'), {
+                scale: 1.05,
+                duration: 0.5,
+                ease: "power1.out"
+              });
+            });
+    
+            card.addEventListener('mouseleave', function () {
+              gsap.to(this.querySelector('.lis-event-content'), {
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out"
+              });
+    
+              gsap.to(this.querySelector('.lis-event-image img'), {
+                scale: 1,
+                duration: 0.5,
+                ease: "power1.out"
+              });
+            });
+          });
+    
+          // Add subtle hover effect to news items
+          document.querySelectorAll('.lis-events-news-section .lis-news-item').forEach(item => {
+            item.addEventListener('mouseenter', function () {
+              gsap.to(this.querySelector('.lis-news-date'), {
+                width: '110px',
+                duration: 0.3,
+                ease: "power2.out"
+              });
+            });
+    
+            item.addEventListener('mouseleave', function () {
+              gsap.to(this.querySelector('.lis-news-date'), {
+                width: '100px',
+                duration: 0.3,
+                ease: "power2.out"
+              });
+            });
+          });
+        });
+      </script>
+ 
+
+    <!-- ##### -->
+
+    <!-- photo type  -->
+    <!-- %%%%%%%% -->
+
+
+
+    <style>
+        /* Scoped CSS with unique class prefix to avoid conflicts */
+        .sh-glance-section * {
+            box-sizing: border-box;
+
+        }
+
+        .sh-glance-section {
+            background-color: #1a2c5b;
+            
+            max-width: 1410px;
+            width: 100%;
+            margin: auto;
+            position: relative;
+            min-height: 500px;
+            /* border-radius: 20px; */
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            font-family: inherit;
+            /* Use the site's existing font */
+        }
+
+        .sh-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .sh-content-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: linear-gradient(135deg, rgba(11, 79, 108, 0.85)); */
+            z-index: 2;
+        }
+
+        .sh-content-container {
+            position: relative;
+
+            z-index: 3;
+            padding: 40px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        .sh-heading {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: sh-fadeInUp 0.8s forwards 0.2s;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .sh-heading:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background: #e0a800;
+            animation: sh-lineExpand 1s forwards 1s;
+        }
+
+        .sh-content-box {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            top: 40px;
+        }
+
+        .sh-stat-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sh-stat-item {
+            flex: 1;
+            min-width: 120px;
+            max-width: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s ease;
+        }
+
+        .sh-stat-item:nth-child(1) {
+            animation: sh-fadeInUp 0.6s forwards 0.5s;
+        }
+
+        .sh-stat-item:nth-child(2) {
+            animation: sh-fadeInUp 0.6s forwards 0.7s;
+        }
+
+        .sh-stat-item:nth-child(3) {
+            animation: sh-fadeInUp 0.6s forwards 0.9s;
+        }
+
+        .sh-stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .sh-stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e0a800;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .sh-stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            color: #fff;
+        }
+
+        .sh-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .sh-particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .sh-stat-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sh-stat-item {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        /* Renamed animations with 'sh-' prefix to avoid conflicts */
+        @keyframes sh-fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes sh-lineExpand {
+            to {
+                width: 60%;
+            }
+        }
+
+        @keyframes sh-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+    <div style="background-color: #E3E3E3">
+        <section class="sh-glance-section">
+            <!-- Full background image -->
+            <img class="sh-bg-image" src="images/class.jpg" alt="Schotest puclic School Background">
+
+            <!-- Gradient overlay -->
+            <div class="sh-content-overlay"></div>
+
+            <!-- Particles effect -->
+            <div class="sh-particles" id="sh-particles"></div>
+
+            <!-- Content container -->
+            <div class="sh-content-container">
+                <div class="sh-content-box">
+                    <h3 class="sh-heading">Schotest public school</h3>
+
+                    <div class="sh-stat-container">
+                        <div class="sh-stat-item">
+                            <span class="sh-stat-number" id="sh-yearsCounter">0</span>
+                            <span class="sh-stat-label">Years of Excellence</span>
+                        </div>
+
+                        <div class="sh-stat-item">
+                            <span class="sh-stat-number" id="sh-studentsCounter">0</span>
+                            <span class="sh-stat-label">Students</span>
+                        </div>
+
+                        <div class="sh-stat-item">
+                            <span class="sh-stat-number" id="sh-employeesCounter">0</span>
+                            <span class="sh-stat-label">Employees</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        // Scoped functions with unique names to avoid conflicts
+        (function () {
+            // Counter animation
+            function shAnimateCounter(id, target, duration) {
+                const element = document.getElementById(id);
+                let start = 0;
+                const increment = Math.floor(target / (duration / 16));
+
+                const timer = setInterval(() => {
+                    start += increment;
+                    if (start >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = start;
+                    }
+                }, 16);
+            }
+
+            // Particles animation
+            function shCreateParticles() {
+                const container = document.getElementById('sh-particles');
+                const count = 30;
+
+                for (let i = 0; i < count; i++) {
+                    const size = Math.random() * 5 + 2;
+                    const particle = document.createElement('div');
+                    particle.className = 'sh-particle';
+
+                    const x = Math.random() * 100;
+                    const y = Math.random() * 100;
+                    const duration = Math.random() * 20 + 10;
+                    const delay = Math.random() * 5;
+
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${x}%`;
+                    particle.style.top = `${y}%`;
+                    particle.style.opacity = Math.random() * 0.5;
+                    particle.style.animation = `sh-float ${duration}s ease-in-out ${delay}s infinite`;
+
+                    container.appendChild(particle);
+                }
+            }
+
+            // Use IntersectionObserver to start animations when section comes into view
+            function initAnimations() {
+                const section = document.querySelector('.sh-glance-section');
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                shAnimateCounter('sh-yearsCounter', 20, 1500);
+                                shAnimateCounter('sh-studentsCounter', 2500, 2000);
+                                shAnimateCounter('sh-employeesCounter', 350, 1800);
+                                shCreateParticles();
+                            }, 300);
+
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                observer.observe(section);
+            }
+
+            // Initialize when DOM is fully loaded
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initAnimations);
+            } else {
+                initAnimations();
+            }
+        })();
+    </script>
+
+
+<!-- contribution panel  -->
+ <!-- &&&&&& -->
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css">
+     <style>
+         /* Isolated CSS for the blog slider section only */
+         #blog-contributions-slider {
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+         
+         #blog-contributions-slider * {
+             box-sizing: border-box;
+
+         }
+         
+         #blog-contributions-slider .scoped-section-title {
+             position: relative;
+             margin-bottom: 2rem;
+             color: #1A3956;
+             font-weight: 700;
+             display: inline-block;
+         }
+         
+         #blog-contributions-slider .scoped-section-title::after {
+             content: '';
+             position: absolute;
+             bottom: -10px;
+             left: 0;
+             width: 60%;
+             height: 4px;
+             background: #E6AD29;
+             border-radius: 2px;
+         }
+         
+         #blog-contributions-slider .scoped-blog-card {
+             background: white;
+             border-radius: 15px;
+             overflow: hidden;
+             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+             transition: all 0.3s ease;
+             height: 100%;
+             margin: 15px;
+             cursor: pointer;
+             position: relative;
+             border: none;
+         }
+         
+         #blog-contributions-slider .scoped-blog-card:hover {
+             transform: translateY(-10px);
+             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+         }
+         
+         #blog-contributions-slider .scoped-blog-image {
+             height: 200px;
+             background-size: cover;
+             background-position: center;
+             position: relative;
+             overflow: hidden;
+         }
+         
+         #blog-contributions-slider .scoped-blog-image::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+             opacity: 0;
+             transition: opacity 0.3s ease;
+         }
+         
+         #blog-contributions-slider .scoped-blog-card:hover .scoped-blog-image::before {
+             opacity: 1;
+         }
+         
+         #blog-contributions-slider .scoped-blog-content {
+             padding: 1.5rem;
+         }
+         
+         #blog-contributions-slider .scoped-blog-title {
+             font-size: 1.2rem;
+             font-weight: 700;
+             color: #2b2d42;
+             margin-bottom: 0.75rem;
+             line-height: 1.4;
+             display: -webkit-box;
+             -webkit-line-clamp: 2;
+             -webkit-box-orient: vertical;
+             overflow: hidden;
+             transition: color 0.3s ease;
+         }
+         
+         #blog-contributions-slider .scoped-blog-card:hover .scoped-blog-title {
+             /* color: #4361ee; */
+         }
+         
+         #blog-contributions-slider .scoped-blog-date {
+             font-size: 0.8rem;
+             color: #6c757d;
+             margin-bottom: 0.75rem;
+             display: flex;
+             align-items: center;
+         }
+         
+         #blog-contributions-slider .scoped-blog-date i {
+             color: #E6AD29;
+             margin-right: 0.5rem;
+         }
+         
+         #blog-contributions-slider .scoped-blog-excerpt {
+             font-size: 0.9rem;
+             color: #6c757d;
+             line-height: 1.6;
+             display: -webkit-box;
+             -webkit-line-clamp: 3;
+             -webkit-box-orient: vertical;
+             overflow: hidden;
+             margin-bottom: 1rem;
+         }
+         
+         #blog-contributions-slider .scoped-read-more {
+             display: inline-block;
+             padding: 0.5rem 1rem;
+             background-color: #1A3956;
+             color: white;
+             border-radius: 5px;
+             font-size: 0.9rem;
+             transition: all 0.3s ease;
+             text-decoration: none;
+             opacity: 0;
+             transform: translateY(10px);
+         }
+         
+         #blog-contributions-slider .scoped-blog-card:hover .scoped-read-more {
+             opacity: 1;
+             transform: translateY(0);
+         }
+         
+         #blog-contributions-slider .scoped-blog-category {
+             position: absolute;
+             top: 15px;
+             left: 15px;
+             background-color: #E6AD29;
+             color: white;
+             font-size: 0.8rem;
+             padding: 0.25rem 0.75rem;
+             border-radius: 20px;
+             z-index: 1;
+         }
+         
+         #blog-contributions-slider .scoped-slider-container {
+             padding: 20px 0;
+         }
+         
+         #blog-contributions-slider .slick-prev, 
+         #blog-contributions-slider .slick-next {
+             background-color: #1A3956;
+             border-radius: 50%;
+             width: 40px;
+             height: 40px;
+             z-index: 1;
+             transition: all 0.3s ease;
+         }
+         
+         #blog-contributions-slider .slick-prev:hover, 
+         /* #blog-contributions-slider .slick-next:hover {
+             background-color: #4361ee;
+         } */
+         
+         #blog-contributions-slider .slick-prev:before, 
+         #blog-contributions-slider .slick-next:before {
+             font-family: 'Font Awesome 5 Free';
+             font-weight: 900;
+             font-size: 20px;
+         }
+         
+         #blog-contributions-slider .slick-prev:before {
+             content: '\f104';
+         }
+         
+         #blog-contributions-slider .slick-next:before {
+             content: '\f105';
+         }
+         
+         #blog-contributions-slider .slick-dots li button:before {
+             font-size: 12px;
+             color: #ffffff;
+         }
+         
+         /* #blog-contributions-slider .slick-dots li.slick-active button:before {
+             color: #2B437A;
+         }
+          */
+         #blog-contributions-slider .scoped-view-all-btn {
+             background-color: #F9BC35;
+             color: rgb(0, 0, 0);
+             border: none;
+             padding: 0.75rem 2rem;
+             border-radius: 5px;
+             font-weight: 600;
+             transition: all 0.3s ease;
+             margin-top: 2rem;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+         }
+         
+         #blog-contributions-slider .scoped-view-all-btn:hover {
+             /* background-color: #2B437A; */
+             transform: translateY(-3px);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+         }
+         
+         #blog-contributions-slider .scoped-section-intro {
+             max-width: 800px;
+             margin: 0 auto 3rem;
+             text-align: center;
+             color: #6c757d;
+         }
+ 
+         /* Animation for continuous sliding */
+         @keyframes scopedFadeIn {
+             from { opacity: 0; transform: translateY(20px); }
+             to { opacity: 1; transform: translateY(0); }
+         }
+ 
+         #blog-contributions-slider .scoped-blog-card {
+             animation: scopedFadeIn 0.6s ease forwards;
+         }
+ 
+         /* Responsive adjustments */
+         @media (max-width: 768px) {
+             #blog-contributions-slider .scoped-blog-image {
+                 height: 180px;
+             }
+             
+             #blog-contributions-slider .scoped-blog-content {
+                 padding: 1rem;
+             }
+             
+             #blog-contributions-slider .scoped-blog-title {
+                 font-size: 1rem;
+             }
+         }
+     </style>
+
+     <section id="blog-contributions-slider" class="py-5" style="background-color: #1A3956;">
+         <div class="container"style="background-color: #E3E3E3; max-width: 1410px;" >
+             <div class="row">
+                 <div class="col-lg-4 col-md-6 mb-4" style="position: relative; top: 160px; left: -5px;">
+                     <h2 class="scoped-section-title">CONTRIBUTION TOWARDS SOCIETY</h2>
+                     <p class="mt-4">Explore our initiatives and insights that contribute to social development and educational advancement in our community.</p>
+                 </div>
+                 <div class="col-lg-8 col-md-6">
+                     <div class="scoped-slider-container">
+                         <div class="scoped-blog-slider">
+                             <!-- Blog Card 1 -->
+                             <div>
+                                 <div class="scoped-blog-card">
+                                     <span class="scoped-blog-category">Mental Health</span>
+                                     <div class="scoped-blog-image" style="background-image: url('images/manodarpan.jpg')"></div>
+                                     <div class="scoped-blog-content">
+                                         <h3 class="scoped-blog-title">Manodarpan - The psychological mirror...</h3>
+                                         <div class="scoped-blog-date">
+                                             <i class="far fa-calendar-check"></i>
+                                             <span>September 10, 2020</span>
+                                         </div>
+                                         <p class="scoped-blog-excerpt">Mental Health has been quite an area of discussion these days. While it has grown to be a topic of importance, the pandemic has further highlighted the need for psychological support systems.</p>
+                                         <a href="#" class="scoped-read-more">Read More</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <!-- Blog Card 2 -->
+                             <div>
+                                 <div class="scoped-blog-card">
+                                     <span class="scoped-blog-category">Education</span>
+                                     <div class="scoped-blog-image" style="background-image: url('images/nep-2020.png')"></div>
+                                     <div class="scoped-blog-content">
+                                         <h3 class="scoped-blog-title">The New Education Policy 2020 is set to be a landmark in India's history of education</h3>
+                                         <div class="scoped-blog-date">
+                                             <i class="far fa-calendar-check"></i>
+                                             <span>September 10, 2020</span>
+                                         </div>
+                                         <p class="scoped-blog-excerpt">The Government of India has renovated the current National Policy on Education, focusing on a more holistic approach to learning and development.</p>
+                                         <a href="#" class="scoped-read-more">Read More</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <!-- Blog Card 3 -->
+                             <div>
+                                 <div class="scoped-blog-card">
+                                     <span class="scoped-blog-category">COVID-19</span>
+                                     <div class="scoped-blog-image" style="background-image: url('images/e-learning.jpg')"></div>
+                                     <div class="scoped-blog-content">
+                                         <h3 class="scoped-blog-title">Education Reforms Due To Coronavirus...</h3>
+                                         <div class="scoped-blog-date">
+                                             <i class="far fa-calendar-check"></i>
+                                             <span>September 10, 2020</span>
+                                         </div>
+                                         <p class="scoped-blog-excerpt">The outbreak of the coronavirus pandemic has created immediate and unprecedented challenges for educational institutions worldwide, prompting rapid adaptation.</p>
+                                         <a href="#" class="scoped-read-more">Read More</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <!-- Blog Card 4 -->
+                             <div>
+                                 <div class="scoped-blog-card">
+                                     <span class="scoped-blog-category">Development</span>
+                                     <div class="scoped-blog-image" style="background-image: url('images/skill-development.jpg')"></div>
+                                     <div class="scoped-blog-content">
+                                         <h3 class="scoped-blog-title">Indian Development Initiatives for development...</h3>
+                                         <div class="scoped-blog-date">
+                                             <i class="far fa-calendar-check"></i>
+                                             <span>September 19, 2022</span>
+                                         </div>
+                                         <p class="scoped-blog-excerpt">Exploring the various initiatives that are driving India's development across multiple sectors including education, healthcare, and technology.</p>
+                                         <a href="#" class="scoped-read-more">Read More</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <!-- Blog Card 5 -->
+                             <div>
+                                 <div class="scoped-blog-card">
+                                     <span class="scoped-blog-category">Innovation</span>
+                                     <div class="scoped-blog-image" style="background-image: url('images/technology.jpg')"></div>
+                                     <div class="scoped-blog-content">
+                                         <h3 class="scoped-blog-title">Technological Advancements in Education</h3>
+                                         <div class="scoped-blog-date">
+                                             <i class="far fa-calendar-check"></i>
+                                             <span>January 15, 2023</span>
+                                         </div>
+                                         <p class="scoped-blog-excerpt">How technology is reshaping the educational landscape and creating new opportunities for learning and development in the digital age.</p>
+                                         <a href="#" class="scoped-read-more">Read More</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             <!-- Blog Card 6 -->
+                             <div>
+                                 <div class="scoped-blog-card">
+                                     <span class="scoped-blog-category">Community</span>
+                                     <div class="scoped-blog-image" style="background-image: url('images/community.jpg')"></div>
+                                     <div class="scoped-blog-content">
+                                         <h3 class="scoped-blog-title">Building Stronger Communities Through Education</h3>
+                                         <div class="scoped-blog-date">
+                                             <i class="far fa-calendar-check"></i>
+                                             <span>March 22, 2023</span>
+                                         </div>
+                                         <p class="scoped-blog-excerpt">Exploring how educational initiatives can strengthen community bonds and foster social cohesion for sustainable development.</p>
+                                         <a href="#" class="scoped-read-more">Read More</a>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="text-center mt-4">
+                         <a href="#" class="btn scoped-view-all-btn m-3">View All Posts</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     
+     <script>
+         $(document).ready(function(){
+             // Initialize the slider only when document is ready
+             $('#blog-contributions-slider .scoped-blog-slider').slick({
+                 dots: true,
+                 infinite: true,
+                 speed: 500,
+                 slidesToShow: 2,
+                 slidesToScroll: 1,
+                 autoplay: true,
+                 autoplaySpeed: 3000,
+                 cssEase: 'ease-in-out',
+                 prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+                 nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+                 responsive: [
+                     {
+                         breakpoint: 1024,
+                         settings: {
+                             slidesToShow: 2,
+                             slidesToScroll: 1,
+                         }
+                     },
+                     {
+                         breakpoint: 768,
+                         settings: {
+                             slidesToShow: 1,
+                             slidesToScroll: 1
+                         }
+                     }
+                 ]
+             });
+             
+             // Add animation delay to each card
+             $('#blog-contributions-slider .scoped-blog-card').each(function(index){
+                 $(this).css('animation-delay', (index * 0.2) + 's');
+             });
+             
+             // Smooth hover transition for cards
+             $('#blog-contributions-slider .scoped-blog-card').hover(
+                 function() {
+                     $(this).find('.scoped-read-more').css('opacity', '1');
+                     $(this).find('.scoped-read-more').css('transform', 'translateY(0)');
+                 },
+                 function() {
+                     $(this).find('.scoped-read-more').css('opacity', '0');
+                     $(this).find('.scoped-read-more').css('transform', 'translateY(10px)');
+                 }
+             );
+         });
+     </script>
+
+   
+ <!-- &&&&&& -->
+
+     <!-- gallery section  -->
+
+<!-- Gallery -->
+
+    <style>
+
+        .gallery-heading {
+            position: relative;
+            margin-bottom: 50px;
+            perspective: 1000px;
+        }
+        
+        .heading-3d {
+            font-size: 4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #d5d4d4;
+            position: relative;
+            display: inline-block;
+            transform-style: preserve-3d;
+            animation: floatText 6s ease-in-out infinite;
+        }
+        
+        .heading-3d::after {
+            content: 'Gallery';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: rgba(184, 191, 207, 0.3);
+            transform: translateZ(-10px);
+        }
+        
+        .heading-3d::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4078ff, #ff40a0);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: lineExpand 3s ease-out forwards;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 250px;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: calc(var(--delay) * 0.2s);
+        }
+        
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+            --delay: 1;
+        }
+        
+        .gallery-item:nth-child(2),
+        .gallery-item:nth-child(3) {
+            --delay: 2;
+        }
+        
+        .gallery-item:nth-child(4),
+        .gallery-item:nth-child(5),
+        .gallery-item:nth-child(6) {
+            --delay: 3;
+        }
+        
+        .gallery-item:nth-child(7),
+        .gallery-item:nth-child(8),
+        .gallery-item:nth-child(9) {
+            --delay: 4;
+        }
+        
+        .gallery-item:nth-child(10),
+        .gallery-item:nth-child(11) {
+            --delay: 5;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            color: white;
+            z-index: 2;
+            transition: bottom 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-caption {
+            bottom: 0;
+        }
+        
+        .view-all {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .view-all-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #4078ff, #ff40a0);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(64, 120, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 1.2s;
+        }
+        
+        .view-all-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .view-all-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(64, 120, 255, 0.4);
+        }
+        
+        .view-all-btn:hover::before {
+            left: 100%;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes floatText {
+            0%, 100% {
+                transform: translateY(0) rotateX(10deg);
+            }
+            50% {
+                transform: translateY(-10px) rotateX(15deg);
+            }
+        }
+        
+        @keyframes lineExpand {
+            0% {
+                transform: scaleX(0);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            
+            .heading-3d {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+            
+            .gallery-item:nth-child(1) {
+                grid-column: span 1;
+            }
+            
+            .heading-3d {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+    <section id="gallery"  style="background-color: #1A3956;">
+        <div class="container" style="background-color: #1A3956;">
+            <div class="gallery-heading">
+                <h2 class="heading-3d">Gallery</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/campus_life.jpg" alt="Gallery Image 1">
+                    <div class="gallery-item-caption">
+                        <h3>Campus Life</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/student_activity.webp" alt="Gallery Image 2">
+                    <div class="gallery-item-caption">
+                        <h3>Student Activities</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/sport_event.jpg" alt="Gallery Image 3">
+                    <div class="gallery-item-caption">
+                        <h3>Sports Events</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/Art&Culturals.jpg" alt="Gallery Image 4">
+                    <div class="gallery-item-caption">
+                        <h3>Arts & Culture</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/acadmic_exellence.jpg" alt="Gallery Image 5">
+                    <div class="gallery-item-caption">
+                        <h3>Academic Excellence</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/science_fair.webp" alt="Gallery Image 6">
+                    <div class="gallery-item-caption">
+                        <h3>Science Fair</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/celebration.jpg" alt="Gallery Image 7">
+                    <div class="gallery-item-caption">
+                        <h3>Celebrations</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/field_trip.jpg" alt="Gallery Image 8">
+                    <div class="gallery-item-caption">
+                        <h3>Field Trips</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/workshop.jpg" alt="Gallery Image 9">
+                    <div class="gallery-item-caption">
+                        <h3>Workshops</h3>
+                    </div>
+                </div>
+                
+               
+            </div>
+            
+            <div class="view-all">
+                <a href="https://schooldemo.schotest.com/gallery" class="view-all-btn">View All Photos</a>
+            </div>
+        </div>
+    </section>
+
+
+
+  <!-- Gallery -->
+
+  <!-- footer -->
+  <footer class="cosmic-footer">
+    <!-- Cosmic Wave Background -->
+    <div class="cosmic-waves">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+    </div>
+    
+    <!-- Floating Planets -->
+    <div class="cosmic-planets">
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+        <div class="planet planet-3"></div>
+    </div>
+    
+    <!-- Interactive Contact Satellite -->
+    <div class="satellite-container" onclick="toggleSatellite()">
+        <div class="satellite">
+            <div class="satellite-body"></div>
+            <div class="satellite-dish"></div>
+            <div class="satellite-panel"></div>
+        </div>
+        <div class="satellite-signal"></div>
+    </div>
+    
+    <!-- Main Footer Content -->
+    <div class="footer-content">
+        <div class="footer-grid">
+            <!-- About Section with Animated Spaceship -->
+            <div class="footer-section about-section">
+                <div class="spaceship-container">
+                    <div class="spaceship">
+                        <div class="spaceship-body"></div>
+                        <div class="spaceship-window"></div>
+                        <div class="spaceship-wing"></div>
+                        <div class="spaceship-engine"></div>
+                    </div>
+                </div>
+                <h3 class="section-title">About Our Mission</h3>
+                <p>We're revolutionizing education through cosmic creativity, helping students reach for the stars in their learning journey.</p>
+                <div class="star-field">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+            </div>
+            
+            <!-- Quick Links with Hovering Asteroids -->
+            <div class="footer-section links-section">
+                <h3 class="section-title">Quick Warp Links</h3>
+                <ul class="cosmic-links">
+                    <li>
+                        <a href="#">
+                            <span class="link-asteroid"></span>
+                            <span class="link-text">Home Planet</span>
+                            <span class="link-trail"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="link-asteroid"></span>
+                            <span class="link-text">About Galaxy</span>
+                            <span class="link-trail"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="link-asteroid"></span>
+                            <span class="link-text">Contact Station</span>
+                            <span class="link-trail"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="link-asteroid"></span>
+                            <span class="link-text">Student Portal</span>
+                            <span class="link-trail"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="link-asteroid"></span>
+                            <span class="link-text">Teacher Hub</span>
+                            <span class="link-trail"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Newsletter with Comet Animation -->
+            <div class="footer-section newsletter-section">
+                <h3 class="section-title">Interstellar Updates</h3>
+                <p>Subscribe to our cosmic newsletter for the latest educational supernovas!</p>
+                <div class="comet-form">
+                    <input type="email" placeholder="Your email address" class="comet-input">
+                    <button class="comet-button">Launch</button>
+                    <div class="comet-animation">
+                        <div class="comet"></div>
+                        <div class="comet-tail"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Links with Orbiting Moons -->
+            <div class="footer-section social-section">
+                <h3 class="section-title">Cosmic Connections</h3>
+                <div class="social-orbit">
+                    <div class="social-planet">
+                        <a href="#" class="social-moon facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-moon twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-moon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-moon linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-moon youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright with Shooting Stars -->
+        <div class="cosmic-copyright">
+            <p>&copy; <span class="copyright-year"></span> Cosmic Education Network. Made with <span class="heart-pulse">❤</span> in the Milky Way.</p>
+            <div class="shooting-stars">
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+/* Cosmic Footer Styles - Scoped to prevent conflicts */
+.cosmic-footer {
+    position: relative;
+    background: #0a0e23;
+    color: #fff;
+    padding: 60px 0 0;
+    overflow: hidden;
+    font-family: 'Orbitron', 'Arial', sans-serif;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cosmic Waves Animation */
+.cosmic-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+    animation: wave 15s linear infinite;
+}
+
+.wave-1 {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%231e3a8a"/></svg>');
+    opacity: 0.7;
+    animation-delay: -5s;
+}
+
+.wave-2 {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%231e3a8a"/></svg>');
+    opacity: 0.5;
+    animation-delay: -2s;
+    animation-duration: 20s;
+}
+
+.wave-3 {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%231e3a8a"/></svg>');
+    opacity: 0.3;
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0) translateZ(0) scaleY(1); }
+    50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
+    100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+/* Floating Planets */
+.cosmic-planets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--planet-color) 0%, var(--planet-dark) 100%);
+    box-shadow: 0 0 20px var(--planet-glow);
+    z-index: 0;
+}
+
+.planet-1 {
+    --planet-color: #ff9a76;
+    --planet-dark: #ff6b45;
+    --planet-glow: rgba(255, 154, 118, 0.4);
+    width: 40px;
+    height: 40px;
+    top: 10%;
+    left: 5%;
+    animation: float 15s ease-in-out infinite;
+}
+
+.planet-2 {
+    --planet-color: #76b5ff;
+    --planet-dark: #4589ff;
+    --planet-glow: rgba(118, 181, 255, 0.4);
+    width: 60px;
+    height: 60px;
+    top: 30%;
+    right: 8%;
+    animation: float 20s ease-in-out infinite reverse;
+}
+
+.planet-3 {
+    --planet-color: #a076ff;
+    --planet-dark: #7d45ff;
+    --planet-glow: rgba(160, 118, 255, 0.4);
+    width: 25px;
+    height: 25px;
+    bottom: 20%;
+    left: 15%;
+    animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Interactive Satellite */
+.satellite-container {
+    position: absolute;
+    top: -50px;
+    right: 100px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+.satellite {
+    position: relative;
+    width: 60px;
+    height: 20px;
+    background: #2a3a6a;
+    border-radius: 10px;
+    animation: satellite-float 8s ease-in-out infinite;
+}
+
+.satellite-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #2a3a6a 0%, #3a4a8a 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(42, 58, 106, 0.8);
+}
+
+.satellite-dish {
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    width: 15px;
+    height: 15px;
+    background: #4a5a9a;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.satellite-panel {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    width: 30px;
+    height: 16px;
+    background: #1a2a5a;
+    border-radius: 3px;
+}
+
+.satellite-signal {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 2px;
+    height: 0;
+    background: rgba(100, 200, 255, 0.7);
+    box-shadow: 0 0 5px rgba(100, 200, 255, 0.5);
+    transition: height 0.3s ease;
+}
+
+.satellite-container:hover .satellite-signal {
+    height: 200px;
+}
+
+.satellite-container.active .satellite-signal {
+    height: 300px;
+}
+
+@keyframes satellite-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* Footer Content */
+.footer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.footer-section {
+    position: relative;
+    padding: 20px;
+    background: rgba(16, 22, 51, 0.6);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    color: #fdc800;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #fdc800, transparent);
+}
+
+/* About Section with Spaceship */
+.about-section {
+    overflow: hidden;
+}
+
+.spaceship-container {
+    position: relative;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.spaceship {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 30px;
+    animation: spaceship-float 6s ease-in-out infinite;
+}
+
+.spaceship-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #4a5a9a 0%, #6a7aba 100%);
+    border-radius: 15px 15px 5px 5px;
+}
+
+.spaceship-window {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background: #a0c0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #a0c0ff;
+}
+
+.spaceship-wing {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 10px;
+    background: #3a4a8a;
+    border-radius: 0 0 5px 5px;
+}
+
+.spaceship-engine {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 5px;
+    background: #ff9a76;
+    border-radius: 0 0 5px 5px;
+    animation: engine-pulse 1s ease-in-out infinite;
+}
+
+.star-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star:nth-child(1) {
+    top: 20%;
+    left: 15%;
+    width: 2px;
+    height: 2px;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 40%;
+    left: 70%;
+    width: 3px;
+    height: 3px;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+    top: 70%;
+    left: 30%;
+    width: 1px;
+    height: 1px;
+    animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+    top: 30%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+    top: 80%;
+    left: 80%;
+    width: 1px;
+    height: 1px;
+    animation-delay: 0.2s;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+@keyframes spaceship-float {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-55%, -55%) rotate(2deg); }
+    75% { transform: translate(-45%, -45%) rotate(-2deg); }
+}
+
+@keyframes engine-pulse {
+    0%, 100% { opacity: 0.7; height: 5px; }
+    50% { opacity: 1; height: 8px; }
+}
+
+/* Quick Links with Asteroids */
+.cosmic-links {
+    list-style: none;
+    padding: 0;
+}
+
+.cosmic-links li {
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cosmic-links a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    padding: 5px 0;
+}
+
+.cosmic-links a:hover {
+    color: #fdc800;
+    transform: translateX(10px);
+}
+
+.link-asteroid {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #6a7aba;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cosmic-links a:hover .link-asteroid {
+    background: #fdc800;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #fdc800;
+}
+
+.link-trail {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 0;
+    height: 2px;
+    background: #fdc800;
+    transition: width 0.3s ease;
+}
+
+.cosmic-links a:hover .link-trail {
+    width: 100%;
+}
+
+/* Newsletter with Comet */
+.comet-form {
+    position: relative;
+    margin-top: 20px;
+}
+
+.comet-input {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.comet-input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fdc800;
+}
+
+.comet-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 7px 15px;
+    background: #fdc800;
+    color: #0a0e23;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comet-button:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+.comet-animation {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+}
+
+.comet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+    animation: comet-flight 15s linear infinite;
+}
+
+.comet-tail {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff);
+    animation: comet-tail 15s linear infinite;
+}
+
+@keyframes comet-flight {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(-300px, 300px); opacity: 0; }
+}
+
+@keyframes comet-tail {
+    0% { width: 0; }
+    10% { width: 100px; }
+    90% { width: 100px; opacity: 1; }
+    100% { width: 0; opacity: 0; }
+}
+
+/* Social Orbit */
+.social-orbit {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 40px auto;
+}
+
+.social-planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #fdc800 0%, #d8a900 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(253, 200, 0, 0.5);
+}
+
+.social-moon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    animation: orbit 10s linear infinite;
+    transform-origin: 100px 100px;
+}
+
+.social-moon.facebook {
+    background: #3b5998;
+    animation-delay: -1s;
+}
+
+.social-moon.twitter {
+    background: #1da1f2;
+    animation-delay: -2s;
+}
+
+.social-moon.instagram {
+    background: #e1306c;
+    animation-delay: -3s;
+}
+
+.social-moon.linkedin {
+    background: #0077b5;
+    animation-delay: -4s;
+}
+
+.social-moon.youtube {
+    background: #ff0000;
+    animation-delay: -5s;
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* Copyright with Shooting Stars */
+.cosmic-copyright {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.heart-pulse {
+    color: #ff6b6b;
+    animation: pulse 1s ease infinite;
+}
+
+.shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.shooting-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+    opacity: 0;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,1), transparent);
+    transform: rotate(-45deg);
+    transform-origin: left center;
+}
+
+.shooting-star:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation: shooting-star 10s linear infinite;
+}
+
+.shooting-star:nth-child(2) {
+    top: 30%;
+    left: 80%;
+    animation: shooting-star 15s linear infinite 5s;
+}
+
+@keyframes shooting-star {
+    0% { transform: translate(0, 0); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translate(-300px, 300px); opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .satellite-container {
+        right: 20px;
+        top: -30px;
+    }
+    
+    .social-orbit {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .social-moon {
+        transform-origin: 75px 75px;
+    }
+    
+    @keyframes orbit {
+        from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
+    }
+}
+</style>
+
+<script>
+// Initialize the current year
+document.querySelector('.copyright-year').textContent = new Date().getFullYear();
+
+// Toggle satellite signal
+function toggleSatellite() {
+    const satellite = document.querySelector('.satellite-container');
+    satellite.classList.toggle('active');
+    
+    // If signal is extended, scroll to contact section
+    if (satellite.classList.contains('active')) {
+        setTimeout(() => {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 500);
+    }
+}
+
+// Add random stars to sections
+function addRandomStars(container, count) {
+    for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.width = `${Math.random() * 3 + 1}px`;
+        star.style.height = star.style.width;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 2}s`;
+        container.appendChild(star);
+    }
+}
+
+// Initialize stars in sections
+document.querySelectorAll('.footer-section').forEach(section => {
+    addRandomStars(section, 10);
+});
+</script>
+  <!-- footer -->
+
+    <!-- %%%%%%%% -->
+</body>
+
+</html>
